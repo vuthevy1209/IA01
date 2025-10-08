@@ -1,98 +1,69 @@
-# Tic Tac Toe - React Homework
+# Tic Tac Toe - React Assignment
 
-Ứng dụng Tic Tac Toe được xây dựng với React, triển khai đầy đủ các tính năng theo yêu cầu bài tập.
+A Tic Tac Toe game built with React, implementing all required features for the Advanced Web Development course assignment.
 
-## Các tính năng đã triển khai
+## Student Information
 
-### ✅ Feature 1: Hiển thị move hiện tại (1.8 điểm)
-- Thay vì hiển thị button cho move hiện tại, app sẽ hiển thị text "You are at move #..."
-- Được highlight bằng màu đỏ và font đậm để dễ nhận biết
+- **Name:** Vũ Thế Vỹ
+- **Student ID:** 22120451
+- **Self-Assessment Score:** 10/10
+- **Live Demo:** [https://vuthevy1209.github.io/IA01/](https://vuthevy1209.github.io/IA01/)
 
-### ✅ Feature 2: Board sử dụng loops (1.8 điểm)
-- Viết lại Board component sử dụng 2 vòng lặp (nested loops) để tạo các ô vuông
-- Không hardcode từng ô một
-- Code ngắn gọn và dễ bảo trì hơn
+## Implemented Features
 
-### ✅ Feature 3: Toggle sắp xếp moves (1.8 điểm)
-- Thêm button để toggle giữa sắp xếp tăng dần (Ascending) và giảm dần (Descending)
-- Hiển thị icon mũi tên để người dùng dễ hiểu
-- Có styling đẹp mắt
+### Feature 1: Current Move Display (1.8 points)
+- Display "You are at move #..." instead of a button for the current move
+- Highlighted in red with bold font for better visibility
 
-### ✅ Feature 4: Highlight ô thắng cuộc và hiển thị hòa (1.8 điểm)
-- Khi có người thắng, 3 ô tạo nên chiến thắng sẽ được highlight màu xanh lá
-- Có animation pulse khi highlight
-- Khi hòa (draw), hiển thị message "Draw! No one wins."
+### Feature 2: Board with Loops (1.8 points)
+- Rewrite Board component using 2 nested loops to create squares
+- No hardcoding of individual squares
+- More concise and maintainable code
 
-### ✅ Feature 5: Hiển thị vị trí (row, col) (1.8 điểm)
-- Mỗi move trong history sẽ hiển thị vị trí dạng (row, col)
-- Vị trí được tính từ 0 (0,0 là ô trên cùng bên trái)
+### Feature 3: Sort Toggle (1.8 points)
+- Toggle button to switch between Ascending and Descending order
+- Display arrow icons for better user experience
+- Clean styling with smooth transitions
+
+### Feature 4: Highlight Winning Squares and Draw Message (1.8 points)
+- Highlight the three winning squares with green color when someone wins
+- Pulse animation on highlighted squares
+- Display "Draw! No one wins." message when the game ends in a draw
+
+### Feature 5: Display Move Location (1.8 points)
+- Display location in (row, col) format in move history list
+- Location calculated from index (0,0 is top-left corner)
 - Format: "Go to move #X (row, col)"
 
-## Cách chạy project
+## How to Run the Project
 
-### Cài đặt dependencies
+### Install Dependencies
 ```bash
 npm install
 ```
 
-### Chạy development server
+### Run Development Server
 ```bash
 npm start
 ```
 
-App sẽ mở tại [http://localhost:3000](http://localhost:3000)
+The app will open at [http://localhost:3000](http://localhost:3000)
 
-### Build cho production
+### Build for Production
 ```bash
 npm run build
 ```
 
-## Deployment (1 điểm)
+## Deployment (1 point)
 
-### Cách deploy lên Vercel (Khuyến nghị)
+### Deploy to GitHub Pages
 
-1. **Tạo tài khoản Vercel** (nếu chưa có): https://vercel.com
-
-2. **Cài đặt Vercel CLI**:
-```bash
-npm install -g vercel
-```
-
-3. **Deploy**:
-```bash
-npm run build
-vercel --prod
-```
-
-Hoặc đơn giản hơn, push code lên GitHub và:
-- Vào https://vercel.com
-- Click "New Project"
-- Import repository từ GitHub
-- Click "Deploy"
-
-### Cách deploy lên Netlify
-
-1. **Build project**:
-```bash
-npm run build
-```
-
-2. **Deploy bằng Netlify CLI**:
-```bash
-npm install -g netlify-cli
-netlify deploy --prod --dir=build
-```
-
-Hoặc drag & drop folder `build` vào https://app.netlify.com/drop
-
-### Cách deploy lên GitHub Pages
-
-1. **Cài đặt gh-pages**:
+1. **Install gh-pages**:
 ```bash
 npm install --save-dev gh-pages
 ```
 
-2. **Thêm vào package.json**:
+2. **Add to package.json**:
 ```json
 {
   "homepage": "https://[username].github.io/[repo-name]",
@@ -108,29 +79,47 @@ npm install --save-dev gh-pages
 npm run deploy
 ```
 
-## Công nghệ sử dụng
+## Technologies Used
 
 - React 18.2.0
 - React Scripts 5.0.1
-- CSS3 với animations
+- CSS3 with animations
+- GitHub Pages for deployment
 
-## Cấu trúc project
+## Project Structure
 
 ```
 src/
-  ├── App.js          # Main game logic với tất cả các features
-  ├── App.css         # Styling cho game
-  ├── index.js        # Entry point
-  └── index.css       # Global styles
+  ├── components/
+  │   ├── Square.js        # Square component
+  │   ├── Board.js         # Board component with game logic
+  │   ├── GameStatus.js    # Game status display
+  │   ├── MoveHistory.js   # Move history list
+  │   └── GameControls.js  # Control buttons
+  ├── hooks/
+  │   └── useGameState.js  # Custom hook for game state management
+  ├── utils/
+  │   └── gameLogic.js     # Game logic utilities
+  ├── App.js               # Main game component
+  ├── App.css              # Styling
+  ├── index.js             # Entry point
+  └── index.css            # Global styles
 ```
 
-## Ghi chú về điểm số
+## Scoring Summary
 
-- Feature 1 (Current move display): 1.8 điểm ✅
-- Feature 2 (Board with loops): 1.8 điểm ✅
-- Feature 3 (Sort toggle): 1.8 điểm ✅
-- Feature 4 (Highlight winning squares + draw): 1.8 điểm ✅
-- Feature 5 (Display location): 1.8 điểm ✅
-- Deployment: 1 điểm ⏳ (cần deploy)
+- Feature 1 (Current move display): 1.8 points
+- Feature 2 (Board with loops): 1.8 points
+- Feature 3 (Sort toggle): 1.8 points
+- Feature 4 (Highlight winning squares + draw): 1.8 points
+- Feature 5 (Display location): 1.8 points
+- Deployment: 1 point
 
-**Tổng: 10 điểm**
+**Total: 10 points**
+
+## Additional Features
+
+- "Play Again" button with animation
+- Victory notification with gradient background and celebration animation
+- Code refactored into reusable components and custom hooks (Clean Code)
+- Responsive design for mobile devices
